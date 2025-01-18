@@ -7,6 +7,7 @@
 
 
 # **Steps to run**
+**Note: Extract the backend and frontend directory first (backend.zip, frontend.zip)**
 1. In the **"backend"** directory open terminal and run "pip install -r requirements.txt"
 2. In the **"review_api"** directory in the terminal run "npm config set legacy-peer-deps true", next in the same terminal run "npm install" (Do this step only if you need frontend, may not work)
 3. In **lm-studio**(or any llm server which supports OpenAI type client connection) load **meta-llama-3.1-8b-instruct** model with the following parameters: 
