@@ -24,7 +24,9 @@
 7. If you want to extract the reviews from new url just type the new url in the searchbar and search.
 8. If you want to stop the server, ctrl+c in the terminal running the backend server.
 
-**Note: Since the llm model runs locally, it takes really long to extract the pagination element and generate reviews so wait atleast 5-10 minutes (longer if your system does not have a good GPU) until new content is generated, opionally if you have access to Open AI service just change the client connection to the openai service in the llm_summarizer.py file and page_scrapper.py file** 
+**Note: Since the llm model runs locally, it takes really long to extract the pagination element and generate reviews so wait atleast 5-10 minutes (longer if your system does not have a good GPU) until new content is generated, opionally if you have access to Open AI service just change the client connection to the openai service in the llm_summarizer.py file and page_scrapper.py file**
+
+**This software does not work for websites which prompt you to enter your login credentials in order to explore the page.**
 
 # **Architecture**
 ![](llm_review.jpg)
