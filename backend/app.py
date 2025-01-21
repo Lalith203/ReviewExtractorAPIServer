@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, Response
+from flask import Flask, request, jsonify, Response, send_from_directory
 from flask_cors import CORS
 import json
 from threading import Thread, Event
@@ -9,10 +9,10 @@ from llm_summarizer import *
 from html_extractor import *
 from page_scraper import *
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="../review_api/build", static_url_path = "/")
 CORS(app, resources={
     r"/api/*": {
-        "origins": "http://localhost:3000",
+        "origins": ["http://localhost:5000", "http://127.0.0.1:5000"],
         "supports_credentials": True
     }
 })
@@ -230,6 +230,10 @@ def reviews():
             'X-Accel-Buffering': 'no'
         }
     )
+    
+@app.route('/')
+def homepage():
+    return send_from_directory(app.static_folder, "index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
